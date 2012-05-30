@@ -8,6 +8,7 @@ Group:      Applications/Text
 License:    GPLv2+
 URL:        http://sed.sourceforge.net/
 Source0:    ftp://ftp.gnu.org/pub/gnu/sed/sed-%{version}.tar.gz
+Source1001: packaging/sed.manifest 
 
 
 %description
@@ -25,6 +26,7 @@ specified in a script file or from the command line.
 
 
 %build
+cp %{SOURCE1001} .
 
 %configure --disable-static \
     --without-included-regex \
@@ -43,6 +45,7 @@ rm -rf %{buildroot}
 make check
 
 %files
+%manifest sed.manifest
 %{_bindir}/sed
 
 
