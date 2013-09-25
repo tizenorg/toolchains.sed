@@ -53,9 +53,12 @@ done
 %check
 make check
 
+# license
+mkdir -p %{buildroot}/usr/share/license
+cp COPYING %{buildroot}/usr/share/license/%{name}
+
 %files
 %manifest sed.manifest
 %{_datadir}/license/%{name}
 %{_bindir}/sed
-
-
+/usr/share/license/%{name}
