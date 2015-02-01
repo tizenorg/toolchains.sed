@@ -10,6 +10,7 @@ URL:        http://sed.sourceforge.net/
 Source0:    ftp://ftp.gnu.org/pub/gnu/sed/sed-%{version}.tar.gz
 Source1001: packaging/sed.manifest 
 
+
 %description
 The sed (Stream EDitor) editor is a stream or batch (non-interactive)
 editor.  Sed takes text as input, performs an operation or set of
