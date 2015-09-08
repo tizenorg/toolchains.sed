@@ -3,9 +3,9 @@
 Name:       sed
 Summary:    A GNU stream text editor
 Version:    4.1.5
-Release:    1
+Release:    2
 Group:      Applications/Text
-License:    GPLv2+
+License:    GPL-2.0+
 URL:        http://sed.sourceforge.net/
 Source0:    ftp://ftp.gnu.org/pub/gnu/sed/sed-%{version}.tar.gz
 Source1001: packaging/sed.manifest 
@@ -40,12 +40,22 @@ rm -rf %{buildroot}
 
 %remove_docs
 
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/license
+for keyword in LICENSE COPYING COPYRIGHT;
+do
+	for file in `find %{_builddir} -name $keyword`;
+	do
+		cat $file >> $RPM_BUILD_ROOT%{_datadir}/license/%{name};
+		echo "";
+	done;
+done
 
 %check
 make check
 
 %files
 %manifest sed.manifest
+%{_datadir}/license/%{name}
 %{_bindir}/sed
 
 
