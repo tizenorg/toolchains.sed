@@ -8,7 +8,7 @@ Group:      Applications/Text
 License:    GPL-2.0+
 URL:        http://sed.sourceforge.net/
 Source0:    ftp://ftp.gnu.org/pub/gnu/sed/sed-%{version}.tar.gz
-Source1001: packaging/sed.manifest 
+Source1001: packaging/sed.manifest
 
 
 %description
@@ -49,9 +49,6 @@ do
 		echo "";
 	done;
 done
-
-%check
-make check
 
 %files
 %manifest sed.manifest
